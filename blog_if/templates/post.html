@@ -1,0 +1,17 @@
+<!-- Template para exibir um post -->
+{% extends 'layout.html' %}
+
+<!-- Renderizando um bloco dentro do layout -->
+{% block content  %}
+
+
+  <div class="blog-post">
+    <!-- Exibindo o título do post -->
+    <h2 class="blog-post-title">{{ post.title }}</h2>
+    <!-- Exibindo a data de criação do post e o nome do autor -->
+    <p class="blog-post-meta">{{ post.created_at|date:'d, M Y' }} by <a href="#">{{ post.author.get_full_name }}</a></p>
+    <!-- Exibindo o conteúdo do post -->
+    {{ post.content|safe }}
+  </div>
+<!-- Fim do bloco content -->
+{% endblock %}
